@@ -5,6 +5,7 @@ from app.routes import resume
 
 app = FastAPI()
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -17,5 +18,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.get("/")
+def home():
+    return {
+        "message": "AI Resume Screening Backend is Running 🚀",
+        "status": "success"
+    }
+
 
 app.include_router(resume.router)
