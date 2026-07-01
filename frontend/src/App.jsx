@@ -96,7 +96,7 @@ function App() {
       setResult(null); // Clear previous results to trigger loading skeletons nicely
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/upload",
+        "https://ai-resume-screening-system-ie3b.onrender.com/upload",
         formData
       );
 
